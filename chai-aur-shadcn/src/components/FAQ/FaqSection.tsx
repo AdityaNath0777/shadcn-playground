@@ -38,7 +38,7 @@ function FaqSection() {
   };
 
   return (
-    <section className="faq-section-container space-y-6 bg-gray-800 px-4 py-2 rounded">
+    <section className="faq-section-container space-y-6 bg-gray-50/10 shadow dark:bg-white/5 px-10 py-6 rounded">
       <div>
         <h1 className="text-lg font-mono">Accordion Type: Single</h1>
         <p className="text-sm">Single Item can remain open at a time</p>
