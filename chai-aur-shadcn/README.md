@@ -139,3 +139,122 @@ The `Accordion` component supports two types:
 ```tsx
 <AccordionItem value={`faq-${index}`}>
 ```
+
+## 5. Dropdown Menu
+
+### Install DropdownMenu
+
+```bash
+npx shadcn@latest add dropdown-menu
+```
+
+### Usage
+
+```tsx
+function ModeToggle() {
+  return (
+    <DropdownMenu>
+      <DropdownTrigger />
+      <DropdownContent />
+    </DropdownMenu>
+  );
+}
+```
+
+Then In content we will add the items to display inside this menu
+
+```tsx
+function ModeToggle() {
+  return (
+    <DropdownMenu>
+      <DropdownTrigger />
+      <DropdownContent>
+        <DropdownItem onClick={handleClick} />
+        <DropdownItem onClick={handleClick} />
+        <DropdownItem onClick={handleClick} />
+      </DropdownContent>
+    </DropdownMenu>
+  );
+}
+```
+
+## 6. Theming in Next.js
+
+### Install next-themes
+
+```bash
+npm install next-themes
+```
+
+### Create a Theme Provider
+
+```tsx
+"use client";
+
+import * as React from "react";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
+
+export function ThemeProvider({
+  children,
+  ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+  return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}
+```
+
+### Wrap Root Layout with it
+
+```tsx
+import { ThemeProvider } from "@/components/theme-provider";
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  return (
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
+  );
+}
+```
+
+### Add Mode Toggle
+
+#### Install DropdownMenu and button for Theme toggler
+
+```bash
+npx shadcn@latest add dropdown-menu
+```
+
+- I already have button
+
+### Make sure to suppress hydration warning
+
+### Dropdown Menu to select the theme (light, dark or system)
+
+```tsx
+function ModeToggle() {
+  const { setTheme } = useTheme(); // from next/themes
+
+  return (
+    <DropdownMenu>
+      <DropdownTrigger />
+      <DropdownContent>
+        <DropdownItem onClick={handleClick} />
+        <DropdownItem onClick={handleClick} />
+        <DropdownItem onClick={handleClick} />
+      </DropdownContent>
+    </DropdownMenu>
+  );
+}
+```

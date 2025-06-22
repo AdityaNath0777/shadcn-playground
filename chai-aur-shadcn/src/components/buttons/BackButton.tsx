@@ -14,6 +14,7 @@ function BackButton() {
       className="cursor-pointer"
       disabled={pathname === "/"}
       onClick={() => router.back()}
+      variant={"outline"}
     >
       <ArrowLeft />
       Go Back from <code>{pathname}</code>

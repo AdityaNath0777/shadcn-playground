@@ -13,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Button } from "../ui/button";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -214,16 +215,27 @@ function ListItem({
 function Navbar() {
   return (
     <nav className="space-y-4 p-2">
-      <ul className="flex items-center gap-2 flex-1">
+      <ul className="flex flex-wrap justify-around items-center gap-2 flex-1">
         <li>
-          <Link href={"/chai"} className="hover:underline">
-            Button
-          </Link>
+          <Button variant={"default"} className="bg-yellow-400 hover:bg-yellow-500 text-white" size={"lg"} asChild>
+            <Link href={"/chai"} className="hover:underline">
+              Button
+            </Link>
+          </Button>
         </li>
         <li>
-          <Link href={"/my-accordion"} className="hover:underline">
-            Accordion
-          </Link>
+          <Button variant={"default"} className="bg-gray-700 hover:bg-gray-800 text-white" size={"lg"} asChild>
+            <Link href={"/my-accordion"} className="hover:underline">
+              Accordion
+            </Link>
+          </Button>
+        </li>
+        <li>
+          <Button variant={"default"} className="bg-blue-500 hover:bg-blue-600 text-white" size={"lg"} asChild>
+            <Link href={"/dropdown"} className="hover:underline">
+              Dropdown
+            </Link>
+          </Button>
         </li>
       </ul>
     </nav>
