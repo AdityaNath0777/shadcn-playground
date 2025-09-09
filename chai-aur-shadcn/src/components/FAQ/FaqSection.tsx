@@ -42,7 +42,27 @@ function FaqSection() {
       <div>
         <h1 className="text-lg font-mono">Accordion Type: Single</h1>
         <p className="text-sm">Single Item can remain open at a time</p>
-        <Accordion type="single">
+        <Accordion type="single" collapsible>
+          {faqs.map((faq, index) => (
+            <AccordionItem value={`faq-${index}`} key={`faq-${index}`}>
+              <div className="" onClick={handleClick}>
+                <AccordionTrigger>
+                  <ReactMarkdown>{faq.question}</ReactMarkdown>
+                </AccordionTrigger>
+              </div>
+              <AccordionContent>
+                <ReactMarkdown>{faq.answer}</ReactMarkdown>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <hr className="bg-gray-400 h-[1px]" />
+        <div className="mt-10"></div>
+        <p>
+          Collapsible <code>false</code>
+        </p>
+        <Accordion type="single" collapsible={false}>
           {faqs.map((faq, index) => (
             <AccordionItem value={`faq-${index}`} key={`faq-${index}`}>
               <div className="" onClick={handleClick}>
@@ -58,7 +78,7 @@ function FaqSection() {
         </Accordion>
       </div>
 
-      <div className="">
+      <div className="mt-10">
         <h1 className="text-lg font-mono">Accordion Type: Multiple</h1>
         <p className="text-sm">
           Multiple items can remain open at the same time

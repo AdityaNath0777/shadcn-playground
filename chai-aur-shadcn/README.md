@@ -258,3 +258,52 @@ function ModeToggle() {
   );
 }
 ```
+
+## 7. Dialog
+
+Install it using
+
+```bash
+npx shadcn@latest add dialog
+```
+
+```jsx
+<Dialog>
+  <DialogTrigger />
+  <DialogContent />
+</Dialog>
+```
+
+```jsx
+<Dialog>
+  <DialogTrigger />
+  <DialogContent>
+    <DialogHeader />
+    <DialogFooter />
+  </DialogContent>
+</Dialog>
+```
+
+```jsx
+<Dialog>
+  <DialogTrigger />
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle />
+      <DialogDescription />
+    </DialogHeader>
+    <DialogFooter />
+  </DialogContent>
+</Dialog>
+```
+
+- To use the Dialog component from within a Context Menu or Dropdown Menu, you must encase the Context Menu or Dropdown Menu component in the Dialog component.
+
+
+
+## 8. Search Bar
+
+> I have implemented in two way
+
+- using Input and Button components
+- using Command and Dialog components
