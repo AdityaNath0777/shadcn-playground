@@ -30,6 +30,11 @@ const Links = [
     href: "/dialog",
     color: "yellow",
   },
+  {
+    label: "Keyboard",
+    href: "/keyboard",
+    color: "black",
+  },
 ];
 
 function Navbar() {
@@ -40,6 +45,7 @@ function Navbar() {
     blue: "bg-blue-400 hover:bg-blue-500",
     gray: "bg-gray-400 hover:bg-gray-500",
     "dark-gray": "bg-gray-700 hover:bg-gray-800",
+    black: "bg-black text-white ring-1 hover:bg-neutral-900"
   };
 
   return (
