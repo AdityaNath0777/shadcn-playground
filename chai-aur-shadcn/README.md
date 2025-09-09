@@ -299,11 +299,13 @@ npx shadcn@latest add dialog
 
 - To use the Dialog component from within a Context Menu or Dropdown Menu, you must encase the Context Menu or Dropdown Menu component in the Dialog component.
 
-
-
 ## 8. Search Bar
 
 > I have implemented in two way
 
 - using Input and Button components
 - using Command and Dialog components
+
+## 9. Keyboard
+
+My own custom Keyboard component, this one is juts for UI based on the keyboard from Aceternity's landing page [link](ui.aceternity.com)
